@@ -99,6 +99,7 @@ function getInningScore(inningCB) {
     'Away': inningCB()
   }
 }
+
 /* Task 5: scoreboard()
 Use the scoreboard function below to do the following:
   1. Receive a callback function, that you create, called `getInningScore`
@@ -141,7 +142,7 @@ Use the scoreboard function below to do the following:
   "This game will require extra innings: Away 12 - Home 12"
 ]  
   */
-
+ 
  function scoreboard(getInningScoreCB, inningCB, inningsToPlay) {
   let fullGame = [];
   let scoreObject = {
@@ -149,10 +150,12 @@ Use the scoreboard function below to do the following:
     'awayPlus': 0
   }
 
-  for (let i = 0; i < inningsToPlay + 1; i++) {
+  for (let i = 0; i < inningsToPlay; i++) {
+    let tempHome = getInningScoreCB(inningCB)["Home"];
+    let tempAway = getInningScoreCB(inningCB)["Away"];
     scoreObject.homePlus += getInningScoreCB(inningCB)["Home"]
     scoreObject.awayPlus += getInningScoreCB(inningCB)["Away"]
-    fullGame.push(`Inning ${i + 1}: Away ${scoreObject.awayPlus} - Home ${scoreObject.homePlus}`);
+    fullGame.push(`Inning ${i + 1}: Away ${tempAway} - Home ${tempHome}`);
   }
   if (scoreObject.awayPlus === scoreObject.homePlus) {
     fullGame.push(`This game will require extra innings: Away ${scoreObject.awayPlus} - Home ${scoreObject.homePlus}`)
@@ -161,6 +164,7 @@ Use the scoreboard function below to do the following:
   }
   return fullGame;
 }
+
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){
