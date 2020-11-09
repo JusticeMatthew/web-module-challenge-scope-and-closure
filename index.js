@@ -141,13 +141,25 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
+ function scoreboard(getInningScoreCB, inningCB, inningsToPlay) {
+  let fullGame = [];
+  let scoreObject = {
+    'homePlus': 0,
+    'awayPlus': 0
+  }
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+  for (let i = 0; i < inningsToPlay + 1; i++) {
+    scoreObject.homePlus += getInningScoreCB(inningCB)["Home"]
+    scoreObject.awayPlus += getInningScoreCB(inningCB)["Away"]
+    fullGame.push(`Inning ${i}: Away ${scoreObject.awayPlus} - Home ${scoreObject.homePlus}`);
+  }
+  if (scoreObject.awayPlus === scoreObject.homePlus) {
+    fullGame.push(`This game will require extra innings: Away ${scoreObject.awayPlus} - Home ${scoreObject.homePlus}`)
+  } else {
+    fullGame.push(`Final Score: Away ${scoreObject.awayPlus} - Home ${scoreObject.homePlus}`)
+  }
+  return fullGame;
 }
-
-
-
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){
