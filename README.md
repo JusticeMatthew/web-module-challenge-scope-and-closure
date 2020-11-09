@@ -43,6 +43,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  -- To me closure creates almost a snapshot of the state of a function that can be accessed by any child funtions within it.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,8 +65,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  -- Closure is automatically created when you nest a function.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+  -- I am not sure what this question is asking
+c. What is the lexical scope of `newRoll`?
+  -- function()?
 
 ### Task 2c - Exit Ticket
 

@@ -28,11 +28,12 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+      -- Closure
   2. Which of the two uses a closure? How can you tell?
-  
+      -- The counter1 code uses a closure because it has a function nested inside a function, this automatically creates a closure of the first function when it's run....I think
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better? 
+      -- Counter1 would be best used if you needed to create multpile counters in your project it could be further modified to take a number as an argument and start a counter from that number using the closure, counter2 would be best for simply keeping track of a count 
 */
 
 // counter1 code
