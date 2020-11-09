@@ -82,8 +82,8 @@ For example: invoking finalScore(inning, 9) might return this object:
 function finalScore(inningCB, numInnings){
   let scoreObject = {'Home': 0, 'Away': 0}
   for (let i = 0; i < numInnings; i++) {
-    scoreObject.home += inningCB;
-    scoreObject.away += inningCB;
+    scoreObject.Home += inningCB();
+    scoreObject.Away += inningCB();
   }
   return scoreObject;
 }
